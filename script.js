@@ -10,12 +10,30 @@
 
 // traducir desde python a javascript
 
+
+
 console.log("Factorial de Numeros");
-num3 = parseInt(prompt("Ingrese un numero: "));
 
-for (let n = num3 - 1; n >= 1; --n){
-    console.log(n);
-    num3 = num3 * n;
+// activar = document.getElementById("botonActivacion");
+// console.log(activar)
+
+let resultado = document.getElementById("resultado");
+
+function obtenerFactorial(){
+    let num3 = parseInt(document.getElementById("Entrada").value);
+    if (!isNaN(num3)){
+        if (num3 <= 0){
+            resultado.innerHTML = `No puede ser menor o igual que 0`;
+        } else {
+            for (let n = num3 - 1; n >= 1; --n){
+                num3 = num3 * n;
+            }
+            console.log(num3)
+            resultado.innerHTML = "Resultado: " + num3;
+        }
+    }
+    else {
+        console.log("No ingresó un numero")
+        resultado.innerHTML = "No ingresó un numero";
+    }
 }
-
-console.log(num3)
